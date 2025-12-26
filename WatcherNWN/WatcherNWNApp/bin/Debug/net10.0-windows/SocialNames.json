@@ -1,0 +1,236 @@
+{
+  "cores": {
+    "Sigvald": {
+      "Name": "Sigvald",
+      "FirstSeen": "2025-12-25T02:14:40.0226722-05:00",
+      "LastSeen": "2025-12-26T00:09:39.5847218-05:00",
+      "Users": [
+        "Kilivin"
+      ]
+    },
+    "Frida": {
+      "Name": "Frida",
+      "FirstSeen": "2025-12-25T02:14:40.0472064-05:00",
+      "LastSeen": "2025-12-26T00:09:39.6223324-05:00",
+      "Users": [
+        "RubiRo"
+      ]
+    },
+    "Ayaya Fastsky": {
+      "Name": "Ayaya Fastsky",
+      "FirstSeen": "2025-12-25T02:14:40.0967334-05:00",
+      "LastSeen": "2025-12-26T00:09:39.46543-05:00",
+      "Users": [
+        "Sev7Sin"
+      ]
+    },
+    "Chest": {
+      "Name": "Chest",
+      "FirstSeen": "2025-12-25T02:14:40.81172-05:00",
+      "LastSeen": "2025-12-26T00:09:38.619065-05:00",
+      "Users": []
+    },
+    "Sarcophagus": {
+      "Name": "Sarcophagus",
+      "FirstSeen": "2025-12-25T02:14:40.9796366-05:00",
+      "LastSeen": "2025-12-26T00:09:37.3540253-05:00",
+      "Users": []
+    },
+    "Skunk": {
+      "Name": "Skunk",
+      "FirstSeen": "2025-12-25T02:14:41.1518054-05:00",
+      "LastSeen": "2025-12-26T00:09:37.5049177-05:00",
+      "Users": []
+    },
+    "Irmgarde": {
+      "Name": "Irmgarde",
+      "FirstSeen": "2025-12-25T02:14:41.1642857-05:00",
+      "LastSeen": "2025-12-26T00:09:38.2461153-05:00",
+      "Users": []
+    },
+    "Bela Bildrath": {
+      "Name": "Bela Bildrath",
+      "FirstSeen": "2025-12-25T02:14:42.264486-05:00",
+      "LastSeen": "2025-12-26T00:09:38.2739166-05:00",
+      "Users": []
+    },
+    "Anica": {
+      "Name": "Anica",
+      "FirstSeen": "2025-12-25T02:14:42.4761783-05:00",
+      "LastSeen": "2025-12-26T00:09:38.330916-05:00",
+      "Users": []
+    },
+    "Vicar Miklos": {
+      "Name": "Vicar Miklos",
+      "FirstSeen": "2025-12-25T02:14:42.4940578-05:00",
+      "LastSeen": "2025-12-26T00:09:38.3606376-05:00",
+      "Users": []
+    },
+    "Otter": {
+      "Name": "Otter",
+      "FirstSeen": "2025-12-25T02:14:42.6001231-05:00",
+      "LastSeen": "2025-12-26T00:09:38.4028136-05:00",
+      "Users": []
+    },
+    "Yastian Sterisko": {
+      "Name": "Yastian Sterisko",
+      "FirstSeen": "2025-12-25T02:14:42.6061304-05:00",
+      "LastSeen": "2025-12-26T00:09:38.4340837-05:00",
+      "Users": []
+    },
+    "Fritz Winterboone": {
+      "Name": "Fritz Winterboone",
+      "FirstSeen": "2025-12-25T02:14:42.9731828-05:00",
+      "LastSeen": "2025-12-26T00:09:38.633789-05:00",
+      "Users": []
+    },
+    "Crafting Dummy": {
+      "Name": "Crafting Dummy",
+      "FirstSeen": "2025-12-25T02:14:43.0170583-05:00",
+      "LastSeen": "2025-12-26T00:09:38.9527719-05:00",
+      "Users": []
+    },
+    "Gocher": {
+      "Name": "Gocher",
+      "FirstSeen": "2025-12-25T02:14:49.9117423-05:00",
+      "LastSeen": "2025-12-26T00:09:39.0022396-05:00",
+      "Users": [
+        "Amr Rekani"
+      ]
+    },
+    "Mink": {
+      "Name": "Mink",
+      "FirstSeen": "2025-12-25T02:14:50.2427848-05:00",
+      "LastSeen": "2025-12-26T00:09:39.1919664-05:00",
+      "Users": []
+    },
+    "Tansa": {
+      "Name": "Tansa",
+      "FirstSeen": "2025-12-25T02:14:50.3934013-05:00",
+      "LastSeen": "2025-12-26T00:09:39.2752168-05:00",
+      "Users": [
+        "Dungbeetle"
+      ]
+    },
+    "Anlyth Enran": {
+      "Name": "Anlyth Enran",
+      "FirstSeen": "2025-12-25T02:14:50.3975642-05:00",
+      "LastSeen": "2025-12-26T00:09:39.2718412-05:00",
+      "Users": [
+        "LovelyVoice"
+      ]
+    },
+    "Fransis Braeburn": {
+      "Name": "Fransis Braeburn",
+      "FirstSeen": "2025-12-25T02:14:50.4198832-05:00",
+      "LastSeen": "2025-12-26T00:09:39.27464-05:00",
+      "Users": [
+        "DrProfScience"
+      ]
+    },
+    "Would Chopin\u0027": {
+      "Name": "Would Chopin\u0027",
+      "FirstSeen": "2025-12-25T02:14:50.7974249-05:00",
+      "LastSeen": "2025-12-26T00:09:39.8475834-05:00",
+      "Users": [
+        "Kaninchen23"
+      ]
+    },
+    "Li\u0027luithe Saelle": {
+      "Name": "Li\u0027luithe Saelle",
+      "FirstSeen": "2025-12-25T02:14:50.9707566-05:00",
+      "LastSeen": "2025-12-26T00:09:39.5736947-05:00",
+      "Users": [
+        "Bloep"
+      ]
+    },
+    "Art Squardo": {
+      "Name": "Art Squardo",
+      "FirstSeen": "2025-12-25T02:14:50.979011-05:00",
+      "LastSeen": "2025-12-26T00:09:39.5601456-05:00",
+      "Users": [
+        "The Caj"
+      ]
+    },
+    "Wuyon\u0027e Everhsek": {
+      "Name": "Wuyon\u0027e Everhsek",
+      "FirstSeen": "2025-12-25T02:14:51.8226486-05:00",
+      "LastSeen": "2025-12-26T00:09:39.5826147-05:00",
+      "Users": [
+        "Wuyon\u0027e Everhsek"
+      ]
+    },
+    "Artos Di\u0027estros": {
+      "Name": "Artos Di\u0027estros",
+      "FirstSeen": "2025-12-25T02:14:51.9523227-05:00",
+      "LastSeen": "2025-12-26T00:09:39.8567456-05:00",
+      "Users": [
+        "DarkWinterKnight"
+      ]
+    },
+    "Gromash": {
+      "Name": "Gromash",
+      "FirstSeen": "2025-12-25T02:14:51.98007-05:00",
+      "LastSeen": "2025-12-26T00:09:39.7404548-05:00",
+      "Users": [
+        "Drakul"
+      ]
+    },
+    "Gronni Round-Shield": {
+      "Name": "Gronni Round-Shield",
+      "FirstSeen": "2025-12-25T02:14:52.387524-05:00",
+      "LastSeen": "2025-12-26T00:09:39.8573128-05:00",
+      "Users": [
+        "Alagast"
+      ]
+    },
+    "John Sodom": {
+      "Name": "John Sodom",
+      "FirstSeen": "2025-12-25T02:14:52.3990068-05:00",
+      "LastSeen": "2025-12-26T00:09:39.8560739-05:00",
+      "Users": [
+        "John Sodom"
+      ]
+    },
+    "Frurry Greepockey": {
+      "Name": "Frurry Greepockey",
+      "FirstSeen": "2025-12-25T02:14:52.4125892-05:00",
+      "LastSeen": "2025-12-26T00:09:39.7493473-05:00",
+      "Users": [
+        "Zonz"
+      ]
+    },
+    "Docar": {
+      "Name": "Docar",
+      "FirstSeen": "2025-12-25T02:14:52.657772-05:00",
+      "LastSeen": "2025-12-26T00:09:39.713177-05:00",
+      "Users": [
+        "bububu"
+      ]
+    },
+    "Kogmek": {
+      "Name": "Kogmek",
+      "FirstSeen": "2025-12-25T02:14:52.6718756-05:00",
+      "LastSeen": "2025-12-26T00:09:39.7061164-05:00",
+      "Users": [
+        "Flynn"
+      ]
+    },
+    "Beltrek": {
+      "Name": "Beltrek",
+      "FirstSeen": "2025-12-25T02:14:53.019022-05:00",
+      "LastSeen": "2025-12-26T00:09:39.8119291-05:00",
+      "Users": [
+        "Beltrek"
+      ]
+    },
+    "Calica\u0027axle Teken\u0027viir": {
+      "Name": "Calica\u0027axle Teken\u0027viir",
+      "FirstSeen": "2025-12-25T02:14:53.0780831-05:00",
+      "LastSeen": "2025-12-26T00:09:39.8289026-05:00",
+      "Users": [
+        "Dark Matter"
+      ]
+    }
+  }
+}

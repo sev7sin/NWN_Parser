@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Launch AetherLens",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/WatcherNWN/WatcherNWNApp/bin/Debug/net10.0-windows/AetherLens.exe",
+      "args": [],
+      "cwd": "${workspaceFolder}/WatcherNWN/WatcherNWNApp",
+      "console": "internalConsole",
+      "stopAtEntry": false
+    }
+  ]
+}
