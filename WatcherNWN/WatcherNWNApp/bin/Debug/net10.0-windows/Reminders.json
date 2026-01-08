@@ -1,8 +1,8 @@
 {
   "reminders": [
     {
-      "Enabled": true,
-      "Text": "Example reminder",
+      "Enabled": false,
+      "Text": "Ayaya",
       "CaseSensitive": false,
       "WholeWord": false,
       "LastMatchPrefix": "",
@@ -10,5 +10,7 @@
       "LastMatchSuffix": "",
       "HasMatch": false
     }
-  ]
+  ],
+  "timerAutoStartEnabled": true,
+  "timerAutoStartText": "Voidsense"
 }

@@ -69,6 +69,9 @@ namespace WatcherNWNApp
         private string? _currentLogPath;
         private readonly IngestionStateStore _ingestionStore;
         private string? _lastPlayerNamePreference;
+        private bool _timerAutoStartEnabled = false;
+        private string _timerAutoStartText = string.Empty;
+        private bool _loadingReminderSettings = false;
 
 
 
@@ -354,18 +357,7 @@ namespace WatcherNWNApp
 
         private void BtnStartTimer_Click(object sender, RoutedEventArgs e)
         {
-            int minutes = GetSelectedTimerMinutes();
-            if (minutes <= 0)
-            {
-                minutes = 1;
-            }
-
-            _timerInitial = TimeSpan.FromMinutes(minutes);
-            _timerRemaining = _timerInitial;
-            _timerPreAlert = GetSelectedPreAlert();
-            _timerPreAlertFired = false;
-            _countdownTimer.Start();
-            UpdateTimerDisplay();
+            StartTimerFromSettings();
         }
 
         private void BtnPauseTimer_Click(object sender, RoutedEventArgs e)
@@ -388,6 +380,22 @@ namespace WatcherNWNApp
             _countdownTimer.Stop();
             _timerRemaining = _timerInitial;
             _timerPreAlertFired = false;
+            UpdateTimerDisplay();
+        }
+
+        private void StartTimerFromSettings()
+        {
+            int minutes = GetSelectedTimerMinutes();
+            if (minutes <= 0)
+            {
+                minutes = 1;
+            }
+
+            _timerInitial = TimeSpan.FromMinutes(minutes);
+            _timerRemaining = _timerInitial;
+            _timerPreAlert = GetSelectedPreAlert();
+            _timerPreAlertFired = false;
+            _countdownTimer.Start();
             UpdateTimerDisplay();
         }
 
@@ -415,6 +423,24 @@ namespace WatcherNWNApp
                 item.ClearMatch();
             }
             UpdateReminderSummary();
+            ScheduleSaveReminders();
+        }
+
+        private void TimerAutoStartCheckChanged(object sender, RoutedEventArgs e)
+        {
+            if (_loadingReminderSettings)
+                return;
+
+            _timerAutoStartEnabled = chkTimerAutoStart.IsChecked == true;
+            ScheduleSaveReminders();
+        }
+
+        private void TimerAutoStartTextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (_loadingReminderSettings)
+                return;
+
+            _timerAutoStartText = txtTimerAutoStart.Text?.Trim() ?? string.Empty;
             ScheduleSaveReminders();
         }
 
@@ -809,6 +835,18 @@ namespace WatcherNWNApp
                 }
             }
 
+            if (_timerAutoStartEnabled && !string.IsNullOrWhiteSpace(_timerAutoStartText))
+            {
+                if (parsed.EventType == "spell_cast" && IsPlayer(parsed.Actor))
+                {
+                    string haystack = parsed.SpellName ?? parsed.Raw ?? string.Empty;
+                    if (haystack.IndexOf(_timerAutoStartText, StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        Dispatcher.Invoke(StartTimerFromSettings);
+                    }
+                }
+            }
+
             bool added = false;
             if (parsed.EventType == "talk")
             {
@@ -1107,6 +1145,9 @@ namespace WatcherNWNApp
         {
             try
             {
+                bool timerAutoEnabled = false;
+                string timerAutoText = string.Empty;
+
                 if (File.Exists(_reminderFilePath))
                 {
                     string json = File.ReadAllText(_reminderFilePath);
@@ -1121,6 +1162,14 @@ namespace WatcherNWNApp
                         else if (doc.RootElement.ValueKind == JsonValueKind.Object && doc.RootElement.TryGetProperty("reminders", out var remindersEl) && remindersEl.ValueKind == JsonValueKind.Array)
                         {
                             list = JsonSerializer.Deserialize<List<ReminderItem>>(remindersEl.GetRawText()) ?? new List<ReminderItem>();
+                            if (doc.RootElement.TryGetProperty("timerAutoStartEnabled", out var enabledEl) && (enabledEl.ValueKind == JsonValueKind.True || enabledEl.ValueKind == JsonValueKind.False))
+                            {
+                                timerAutoEnabled = enabledEl.GetBoolean();
+                            }
+                            if (doc.RootElement.TryGetProperty("timerAutoStartText", out var textEl) && textEl.ValueKind == JsonValueKind.String)
+                            {
+                                timerAutoText = textEl.GetString() ?? string.Empty;
+                            }
                         }
                     }
                     catch
@@ -1138,6 +1187,13 @@ namespace WatcherNWNApp
                         }
                     }
                 }
+
+                _loadingReminderSettings = true;
+                _timerAutoStartEnabled = timerAutoEnabled;
+                _timerAutoStartText = timerAutoText.Trim();
+                chkTimerAutoStart.IsChecked = _timerAutoStartEnabled;
+                txtTimerAutoStart.Text = _timerAutoStartText;
+                _loadingReminderSettings = false;
             }
             catch
             {
@@ -1184,7 +1240,12 @@ namespace WatcherNWNApp
                         .ToList();
                 }
 
-                var dto = new { reminders = snapshot };
+                var dto = new
+                {
+                    reminders = snapshot,
+                    timerAutoStartEnabled = _timerAutoStartEnabled,
+                    timerAutoStartText = _timerAutoStartText
+                };
                 var options = new JsonSerializerOptions { WriteIndented = true };
                 File.WriteAllText(_reminderFilePath, JsonSerializer.Serialize(dto, options));
             }

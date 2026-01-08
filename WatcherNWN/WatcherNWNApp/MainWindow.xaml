@@ -380,6 +380,10 @@
                                     <Slider x:Name="sliderVolume" Width="160" Minimum="0" Maximum="1" TickFrequency="0.1" IsSnapToTickEnabled="True" ValueChanged="SliderVolume_ValueChanged"/>
                                     <TextBlock x:Name="txtVolumeValue" Text="50%" VerticalAlignment="Center" Margin="8,0,0,0"/>
                                 </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
+                                    <CheckBox x:Name="chkTimerAutoStart" Content="Start timer on cast" VerticalAlignment="Center" Margin="0,0,8,0" Checked="TimerAutoStartCheckChanged" Unchecked="TimerAutoStartCheckChanged" ToolTip="Automatically start the timer when this text appears in chat"/>
+                                    <TextBox x:Name="txtTimerAutoStart" Width="220" Background="#2a2a2a" Foreground="White" TextChanged="TimerAutoStartTextChanged" IsEnabled="{Binding IsChecked, ElementName=chkTimerAutoStart}" ToolTip="Text to look for in chat (case-insensitive)"/>
+                                </StackPanel>
                             </StackPanel>
                         </Border>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
@@ -417,21 +421,22 @@
                                         </Grid.Resources>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="Auto"/>
                                             <ColumnDefinition Width="Auto"/>
                                             <ColumnDefinition Width="Auto"/>
                                         </Grid.ColumnDefinitions>
                                         <CheckBox x:Name="chkEnabled" Grid.Column="0" IsChecked="{Binding Enabled, Mode=TwoWay}" VerticalAlignment="Center" Margin="0,0,8,0" Checked="ReminderCheckChanged" Unchecked="ReminderCheckChanged" ToolTip="Toggle this reminder on/off"/>
-                                        <TextBox x:Name="txtReminder" Grid.Column="1" Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MinWidth="240" HorizontalAlignment="Left" Margin="0,0,8,0" TextChanged="ReminderTextChanged" ToolTip="Text to match in the log (autosaves)"/>
-                                        <CheckBox x:Name="chkCase" Grid.Column="2" Content="Case" IsChecked="{Binding CaseSensitive, Mode=TwoWay}" VerticalAlignment="Center" Margin="0,0,8,0" Checked="ReminderCheckChanged" Unchecked="ReminderCheckChanged" ToolTip="Case-sensitive match. Example: 'Fire' matches 'Fireball' but not 'fireball'. Disable to match both."/>
-                                        <CheckBox x:Name="chkWhole" Grid.Column="3" Content="Whole word" IsChecked="{Binding WholeWord, Mode=TwoWay}" VerticalAlignment="Center" Margin="0,0,8,0" Checked="ReminderCheckChanged" Unchecked="ReminderCheckChanged" ToolTip="Whole-word match only. Example: 'haste' matches 'You cast haste', but not 'chastened'. Disable to match substrings."/>
-                                        <Button x:Name="btnRemove" Grid.Column="4" Content="X" Width="28" Height="24" Click="BtnRemoveReminder_Click" Background="#2a2a2a" Foreground="White" ToolTip="Remove this reminder"/>
-                                        <TextBlock Grid.ColumnSpan="5" Margin="24,4,0,0" TextWrapping="Wrap" Visibility="{Binding HasMatch, Converter={StaticResource BoolToVis}}">
+                                        <TextBox x:Name="txtReminder" Grid.Column="1" Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="240" HorizontalAlignment="Left" Margin="0,0,8,0" TextChanged="ReminderTextChanged" ToolTip="Text to match in the log (autosaves)"/>
+                                        <TextBlock Grid.Column="2" Margin="0,0,12,0" TextWrapping="Wrap" VerticalAlignment="Center" Visibility="{Binding HasMatch, Converter={StaticResource BoolToVis}}">
                                             <Run Text="{Binding LastMatchPrefix, Mode=OneWay}" Foreground="Gold"/>
                                             <Run Text="{Binding LastMatchMatch, Mode=OneWay}" Foreground="Red"/>
                                             <Run Text="{Binding LastMatchSuffix, Mode=OneWay}" Foreground="Gold"/>
                                         </TextBlock>
+                                        <CheckBox x:Name="chkCase" Grid.Column="3" Content="Case" IsChecked="{Binding CaseSensitive, Mode=TwoWay}" VerticalAlignment="Center" Margin="0,0,8,0" Checked="ReminderCheckChanged" Unchecked="ReminderCheckChanged" ToolTip="Case-sensitive match. Example: 'Fire' matches 'Fireball' but not 'fireball'. Disable to match both."/>
+                                        <CheckBox x:Name="chkWhole" Grid.Column="4" Content="Whole word" IsChecked="{Binding WholeWord, Mode=TwoWay}" VerticalAlignment="Center" Margin="0,0,8,0" Checked="ReminderCheckChanged" Unchecked="ReminderCheckChanged" ToolTip="Whole-word match only. Example: 'haste' matches 'You cast haste', but not 'chastened'. Disable to match substrings."/>
+                                        <Button x:Name="btnRemove" Grid.Column="5" Content="X" Width="28" Height="24" Click="BtnRemoveReminder_Click" Background="#2a2a2a" Foreground="White" ToolTip="Remove this reminder"/>
                                     </Grid>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>

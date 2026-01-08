@@ -1,0 +1,14 @@
+{
+  "reminders": [
+    {
+      "Enabled": true,
+      "Text": "Example reminder",
+      "CaseSensitive": false,
+      "WholeWord": false,
+      "LastMatchPrefix": "",
+      "LastMatchMatch": "",
+      "LastMatchSuffix": "",
+      "HasMatch": false
+    }
+  ]
+}

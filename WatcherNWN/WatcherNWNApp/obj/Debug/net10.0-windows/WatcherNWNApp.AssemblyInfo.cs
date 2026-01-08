@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AetherLens")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9598f74e43372bee63e6925cdfdadfa4bd95ce76")]
 [assembly: System.Reflection.AssemblyProductAttribute("AetherLens")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AetherLens")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

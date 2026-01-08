@@ -64,3 +64,4 @@ C:\Users\inter\Desktop\VS projects\NWN_Parser\WatcherNWN\WatcherNWNApp\bin\Debug
 C:\Users\inter\Desktop\VS projects\NWN_Parser\WatcherNWN\WatcherNWNApp\bin\Debug\net10.0-windows\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\inter\Desktop\VS projects\NWN_Parser\WatcherNWN\WatcherNWNApp\bin\Debug\net10.0-windows\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\inter\Desktop\VS projects\NWN_Parser\WatcherNWN\WatcherNWNApp\obj\Debug\net10.0-windows\WatcherN.E386623E.Up2Date
+C:\Users\inter\Desktop\VS projects\NWN_Parser\WatcherNWN\WatcherNWNApp\obj\Debug\net10.0-windows\WatcherNWNApp.sourcelink.json
